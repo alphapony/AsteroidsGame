@@ -17,7 +17,6 @@ AsteroidsGame::AsteroidsGame() {
 
     r.init().withSdlInitFlags(SDL_INIT_EVERYTHING)
      .withSdlWindowFlags(SDL_WINDOW_OPENGL);
-
     time_t t;                                               // random seed based on time
     srand((unsigned) time(&t));
 
