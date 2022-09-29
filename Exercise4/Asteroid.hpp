@@ -8,6 +8,8 @@ public:
     
     float getRadius() const;
 
+    void update(float deltaTime) override;
+
     void onCollision(std::shared_ptr<GameObject> other) override;
     
     void setRadius(float radius);
