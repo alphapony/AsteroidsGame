@@ -29,8 +29,8 @@ float Asteroid::getRadius() const {
 }
 
 void Asteroid::update(float deltaTime) {
-    rotation += rotationSpeed;
-    position += moveSpeed;
+    rotation += rotationSpeed * deltaTime;
+    position += velocity * deltaTime;
 }
 
 void Asteroid::onCollision(std::shared_ptr<GameObject> other) {
