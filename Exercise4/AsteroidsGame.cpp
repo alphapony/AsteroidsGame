@@ -8,6 +8,7 @@
 #include "GameObject.hpp"
 #include "SpaceShip.hpp"
 #include "Asteroid.hpp"
+#include "Laser.hpp"
 
 
 using namespace sre;
@@ -34,6 +35,8 @@ AsteroidsGame::AsteroidsGame() {
     gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite4));
     auto asteroidSprite5 = atlas->get("sMeteorBig.png");
     gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite5));
+    auto laserSprite = atlas->get("sLaser.png");
+    gameObjects.push_back(std::make_shared<Laser>(laserSprite));
 
     camera.setWindowCoordinates();
 
