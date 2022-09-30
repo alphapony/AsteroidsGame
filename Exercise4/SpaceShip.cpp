@@ -5,6 +5,8 @@
 #include <glm/gtx/rotate_vector.hpp>
 #include "SpaceShip.hpp"
 #include "sre/Renderer.hpp"
+#include "Laser.hpp"
+#include "AsteroidsGame.hpp"
 
 SpaceShip::SpaceShip(const sre::Sprite &sprite) : GameObject(sprite) {
     scale = glm::vec2(0.5f,0.5f);
