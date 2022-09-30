@@ -8,18 +8,20 @@
 #include "sre/Renderer.hpp"
 #include <random>
 
-std::random_device rd;
-std::default_random_engine eng(rd());
+inline float random_range(float min, float max)
+{
+    return min + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (max - min)));
+}
 
 Asteroid::Asteroid(const sre::Sprite& sprite) : GameObject(sprite) {
     scale = glm::vec2(0.5f, 0.5f);
     winSize = sre::Renderer::instance->getDrawableSize();
     radius = 23;
     rotation = 0;
-    std::uniform_real_distribution<float> distr(0.2, 0.8);
-    position = winSize * distr(eng);
-
+    position = winSize * random_range(0.2, 0.8);
     velocity = glm::vec2(0.0f, 0.0f);
+    moveSpeed = random_range(0.2, 0.8);
+    rotationSpeed = random_range(0.0, 7.0);
 }
 
 float Asteroid::getRadius() const {
@@ -27,8 +29,8 @@ float Asteroid::getRadius() const {
 }
 
 void Asteroid::update(float deltaTime) {
-    std::uniform_real_distribution<float> distr(0.0, 7.0);
-    rotation += distr(eng);
+    rotation += rotationSpeed;
+    position += moveSpeed;
 }
 
 void Asteroid::onCollision(std::shared_ptr<GameObject> other) {
