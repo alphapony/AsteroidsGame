@@ -24,10 +24,16 @@ AsteroidsGame::AsteroidsGame() {
 
     auto spaceshipSprite = atlas->get("sPlayer.png");
     gameObjects.push_back(std::make_shared<SpaceShip>(spaceshipSprite));
-    auto asteroidSprite = atlas->get("sMeteorBig.png");
-    gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite));
     auto asteroidSprite1 = atlas->get("sMeteorBig.png");
     gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite1));
+    auto asteroidSprite2 = atlas->get("sMeteorMedium.png");
+    gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite2));
+    auto asteroidSprite3 = atlas->get("sMeteorMedium.png");
+    gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite3));
+    auto asteroidSprite4 = atlas->get("sMeteorSmall.png");
+    gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite4));
+    auto asteroidSprite5 = atlas->get("sMeteorBig.png");
+    gameObjects.push_back(std::make_shared<Asteroid>(asteroidSprite5));
 
     camera.setWindowCoordinates();
 
