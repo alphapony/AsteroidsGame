@@ -19,8 +19,8 @@ Asteroid::Asteroid(const sre::Sprite& sprite) : GameObject(sprite) {
     radius = 23;
     rotation = 0;
     position = winSize * random_range(0.2, 0.8);
-    velocity = glm::vec2(0.0f, 0.0f);
-    rotationSpeed = random_range(0.0, 7.0);
+    velocity = glm::vec2(random_range(-80.0, 80.0), random_range(-80.0, 80.0));
+    rotationSpeed = random_range(-70.0, 70.0);
 }
 
 float Asteroid::getRadius() const {
