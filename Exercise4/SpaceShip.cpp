@@ -53,14 +53,14 @@ void SpaceShip::onCollision(std::shared_ptr<GameObject> other) {
 
 }
 
-void SpaceShip::onKey(SDL_Event &keyEvent) {
-    if (keyEvent.key.keysym.sym == SDLK_UP){
+void SpaceShip::onKey(SDL_Event& keyEvent) {
+    if (keyEvent.key.keysym.sym == SDLK_UP) {
         thrust = keyEvent.type == SDL_KEYDOWN;
     }
-    if (keyEvent.key.keysym.sym == SDLK_LEFT){
+    if (keyEvent.key.keysym.sym == SDLK_LEFT) {
         rotateCCW = keyEvent.type == SDL_KEYDOWN;
     }
-    if (keyEvent.key.keysym.sym == SDLK_RIGHT){
+    if (keyEvent.key.keysym.sym == SDLK_RIGHT) {
         rotateCW = keyEvent.type == SDL_KEYDOWN;
     }
 }
