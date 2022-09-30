@@ -17,7 +17,6 @@ public:
     glm::vec2 velocity;
 
 private:
-    float rotationSpeed;
     float moveSpeed;
     glm::vec2 winSize;
 

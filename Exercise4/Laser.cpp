@@ -20,7 +20,6 @@ Laser::Laser(const sre::Sprite& sprite) : GameObject(sprite) {
     rotation = 0;
     position = winSize * random_range(0.2, 0.8);
     velocity = glm::vec2(random_range(-80.0, 80.0), random_range(-80.0, 80.0));
-    rotationSpeed = random_range(-70.0, 70.0);
 }
 
 float Laser::getRadius() const {
@@ -28,7 +27,6 @@ float Laser::getRadius() const {
 }
 
 void Laser::update(float deltaTime) {
-    rotation += rotationSpeed * deltaTime;
     position += velocity * deltaTime;
 }
 
