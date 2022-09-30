@@ -13,7 +13,11 @@
 
 using namespace sre;
 
+AsteroidsGame* AsteroidsGame::instance= nullptr;
 AsteroidsGame::AsteroidsGame() {
+    if (instance == nullptr) {
+        instance = this;
+    }
     r.setWindowTitle("Asteroids by Vesk ITU");
 
     r.init().withSdlInitFlags(SDL_INIT_EVERYTHING)
@@ -55,6 +59,10 @@ AsteroidsGame::AsteroidsGame() {
     r.startEventLoop();
 }
 
+AsteroidsGame* AsteroidsGame::getInstance()
+{
+    return instance;
+}
 void AsteroidsGame::update(float deltaTime) {
 	for (int i = 0; i < gameObjects.size();i++) {
 		gameObjects[i]->update(deltaTime);
@@ -118,6 +126,9 @@ void AsteroidsGame::keyEvent(SDL_Event &event) {
     }
 }
 
+void AsteroidsGame::createObject(std::shared_ptr<GameObject> gameObject) {
+    
+}
 int main(){
     new AsteroidsGame();
     return 0;
