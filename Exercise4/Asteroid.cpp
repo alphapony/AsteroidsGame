@@ -20,7 +20,6 @@ Asteroid::Asteroid(const sre::Sprite& sprite) : GameObject(sprite) {
     rotation = 0;
     position = winSize * random_range(0.2, 0.8);
     velocity = glm::vec2(0.0f, 0.0f);
-    moveSpeed = random_range(0.2, 0.8);
     rotationSpeed = random_range(0.0, 7.0);
 }
 
